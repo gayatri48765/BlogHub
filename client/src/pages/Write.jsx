@@ -28,7 +28,6 @@ const Write = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     const imgUrl = await upload();
-    console.log("inside handle click");
     try {
       state
         ? await axios.put(`/posts/${state.id}`, {
@@ -46,7 +45,6 @@ const Write = () => {
           });
           navigate("/")
     } catch (err) {
-      console.log("caught error")
       console.log(err);
     }
   };
